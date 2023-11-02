@@ -25,13 +25,13 @@ int* removeDuplicate(int* arr,int *size){
     {
         if(arr[i]-arr[i+1]==0){
             arr=deleteElement(arr,--*size,i+1);
-            for (int j = 0; j < *size; j++){
-                printf("Try:%d\n", arr[j]);
-            }
-            printf("end %d\n",*size);
-            printf("i: %d\n",i);
+            // for (int j = 0; j < *size; j++){
+                // printf("Try:%d\n", arr[j]);
+            // }
+            // printf("end %d\n",*size);
+            // printf("i: %d\n",i);
             i=-1;
-            printf("i: %d\n",i);
+            // printf("i: %d\n",i);
         }
     }
     return arr;
@@ -49,7 +49,7 @@ int main(){
 
     int* newArr=removeDuplicate(arr,&size);
 
-    printf("The array elements:\n");
+    printf("The array elements after duplicate removal:\n");
     for (int i = 0; i < size; i++){
         printf("%d\n", newArr[i]);
     }
