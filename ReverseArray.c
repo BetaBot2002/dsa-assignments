@@ -34,7 +34,7 @@ int main(){
     }
     reverse(arr, size);
 
-    printf("The array elements:\n");
+    printf("The array elements after reversal:\n");
     for (int i = 0; i < size; i++){
         printf("%d\n", arr[i]);
     }

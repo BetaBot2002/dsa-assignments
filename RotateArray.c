@@ -36,9 +36,13 @@ int main(){
        printf("%d\n",arr[i]);
     }
 
-    rotateArray(arr, size,2);
+    int rotation;
+    printf("Enter the times of rotation:\n");
+    scanf("%d",&rotation);
 
-    printf("The array elements:\n");
+    rotateArray(arr, size,rotation);
+
+    printf("The array elements after rotation:\n");
     for (int i = 0; i < size; i++){
         printf("%d\n", arr[i]);
     }
