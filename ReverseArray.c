@@ -17,12 +17,20 @@ void reverse(int *arr, int size){
 }
 
 int main(){
-    int arr[5];
-    int size = sizeof(arr) / sizeof(arr[0]);
+    int size;
+    printf("Enter the size of array:\n");
+    scanf("%d",&size);
+
+    int *arr=(int*)malloc(size*sizeof(int));
 
     printf("Enter the array elements:\n");
     for (int i = 0; i < size; i++){
-        scanf("%d", &arr[i]);
+       scanf("%d",&arr[i]);
+    }
+
+    printf("The array elements are:\n");
+    for (int i = 0; i < size; i++){
+       printf("%d\n",arr[i]);
     }
     reverse(arr, size);
 
