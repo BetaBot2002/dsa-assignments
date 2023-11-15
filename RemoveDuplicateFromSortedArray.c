@@ -3,10 +3,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void sortArray(int* arr,int size){
-    //Sorting Logic
-}
-
 int* deleteElement(int* arr,int size,int index){
     int* newArray=(int*)malloc(size*sizeof(int));
     int j=0;
@@ -25,13 +21,7 @@ int* removeDuplicate(int* arr,int *size){
     {
         if(arr[i]-arr[i+1]==0){
             arr=deleteElement(arr,--*size,i+1);
-            // for (int j = 0; j < *size; j++){
-                // printf("Try:%d\n", arr[j]);
-            // }
-            // printf("end %d\n",*size);
-            // printf("i: %d\n",i);
             i=-1;
-            // printf("i: %d\n",i);
         }
     }
     return arr;
@@ -39,12 +29,15 @@ int* removeDuplicate(int* arr,int *size){
 }
 
 int main(){
-    int arr[5];
-    int size = sizeof(arr) / sizeof(arr[0]);
+    int size;
+    printf("Enter the size of array:\n");
+    scanf("%d",&size);
 
-    printf("Enter the array elements:\n");
+    int *arr=(int*)malloc(size*sizeof(int));
+
+    printf("Enter the array elements in ascending order:\n");
     for (int i = 0; i < size; i++){
-        scanf("%d", &arr[i]);
+       scanf("%d",&arr[i]);
     }
 
     int* newArr=removeDuplicate(arr,&size);
