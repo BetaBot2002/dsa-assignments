@@ -18,7 +18,7 @@
 11. Create a singly linked list and write a function to reverse it.
 12. Implement a ptogram to detect if a linked list has a cycle.
 13. Write afunction to merge two sorted linked lists into a single sorted list.
-14. Implement an algorithm to find the nth node pom the end ofa linked list.
+14. Implement an algorithm to find the nth node from the end of a linked list.
 15. Create a program to delete a node with a given value from a linked list.
 16. Write afunction to check if two linked lists intersect, and if they do, find the intersection node.
 17. Implement afunction to add two numbers represented by linked lists (e.g., 342 + 465 = 807).
