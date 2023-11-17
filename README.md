@@ -15,7 +15,7 @@
 10. Implement an algorithm to search for an element in a sorted and rotated array (rotated binary search).
 
 #### Assignment 3
-11. Create a singly linked list and write afunction to reverse it.
+11. Create a singly linked list and write a function to reverse it.
 12. Implement a ptogram to detect if a linked list has a cycle.
 13. Write afunction to merge two sorted linked lists into a single sorted list.
 14. Implement an algorithm to find the nth node pom the end ofa linked list.
