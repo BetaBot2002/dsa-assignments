@@ -15,13 +15,10 @@ Node* createNode(int data){
 }
 
 Node* insertNode(Node* head,int data){
-    if(head==NULL) return createNode(data);
-
-    Node* temp=head;
-    head=createNode(data);
-    head->next=temp;
-    
-    return head;
+    Node* newNode=createNode(data);
+    if(head==NULL) return newNode;
+    newNode->next=head;
+    return newNode;
 }
 
 int checkCycle(Node* head){
