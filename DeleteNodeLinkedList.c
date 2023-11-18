@@ -57,7 +57,11 @@ int main(){
     printf("The List is:\n");
     displayList(LinkedList);
 
-    Node* deleted=deleteNode(LinkedList,2);
+    int value;
+    printf("Enter the node value to delete:\n");
+    scanf("%d",&value);
+
+    Node* deleted=deleteNode(LinkedList,value);
 
     if(deleted!=NULL){
         printf("Deleted: %d\n",deleted->data);
