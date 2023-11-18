@@ -46,13 +46,22 @@ void displayList(Node* head){
 
 
 int main(){
+    int size;
+    printf("Enter the number of items:\n");
+    scanf("%d",&size);
+    
     Node* LinkedList=NULL;
-    LinkedList=insertNode(LinkedList,1);
-    LinkedList=insertNode(LinkedList,2);
-    LinkedList=insertNode(LinkedList,3);
-    LinkedList=insertNode(LinkedList,4);
+    printf("Enter the list:\n");
+    for (int i = 0; i < size; i++){
+        int val;
+        scanf("%d",&val);
+        LinkedList=insertNode(LinkedList,val);
+    }
+    printf("The List is:\n");
     displayList(LinkedList);
+    
     LinkedList=reverseList(LinkedList);
+    printf("The List after revrsal is:\n");
     displayList(LinkedList);
     return 0;
 }

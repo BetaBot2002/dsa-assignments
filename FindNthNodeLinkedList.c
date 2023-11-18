@@ -54,13 +54,24 @@ void displayList(Node* head){
 
 
 int main(){
+    int size;
+    printf("Enter the number of items:\n");
+    scanf("%d",&size);
+    
     Node* LinkedList=NULL;
-    LinkedList=insertNode(LinkedList,1);
-    LinkedList=insertNode(LinkedList,2);
-    LinkedList=insertNode(LinkedList,3);
-    LinkedList=insertNode(LinkedList,4);
+    printf("Enter the list:\n");
+    for (int i = 0; i < size; i++){
+        int val;
+        scanf("%d",&val);
+        LinkedList=insertNode(LinkedList,val);
+    }
+    printf("The List is:\n");
     displayList(LinkedList);
-    int pos=4;
+
+    int pos;
+    printf("Enter the position of the item:\n");
+    scanf("%d",&pos);    
+
     Node* found=findNthNode(LinkedList,pos);
     if(found != NULL){
         printf("Found at position %d from last: %d\n",pos,found->data);
