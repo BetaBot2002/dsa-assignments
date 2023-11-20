@@ -25,32 +25,27 @@ Node* ListAddition(Node* head1,Node* head2,Node* result){
     int sum=0;
     Node* current1=head1;
     Node* current2=head2;
+    Node* resultPtr=result;
 
-    while (current1 !=NULL && current2 !=NULL){
-        sum=carry+current1->data+current2->data;
-        carry=sum>=10?1:0;
-        sum=sum>=10?10-sum:sum;
-        result=insertNode(result,createNode(sum));
-        current1=current1->next;
-        current2=current2->next;
+    while (current1 !=NULL || current2 !=NULL){
+        sum=0+carry;
+        if (current1 !=NULL){
+            sum+=current1->data;
+            current1=current1->next;
+        }
+
+        if (current2 !=NULL){
+            sum+=current2->data;
+            current2=current2->next;
+        }
+
+        carry=sum/10;
+        sum=sum%10;
+        resultPtr->next=createNode(sum);
+        resultPtr=resultPtr->next;
     }
 
-    while (current1 !=NULL){
-        sum=carry+current1->data;
-        carry=sum>=10?1:0;
-        sum=sum>=10?10-sum:sum;
-        result=insertNode(result,createNode(sum));
-        current1=current1->next;
-    }
-
-    while (current2 !=NULL){
-        sum=carry+current2->data;
-        carry=sum>=10?1:0;
-        sum=sum>=10?10-sum:sum;
-        result=insertNode(result,createNode(sum));
-        current2=current2->next;
-    }
-    return result;
+    return result->next;
 }
 
 void displayList(Node* head){
@@ -72,22 +67,25 @@ int main(){
     Node* node3=createNode(2);
     Node* node4=createNode(4);
     Node* node5=createNode(6);
-    // Node* node6=createNode(5);
+    Node* node6=createNode(5);
 
     LinkedList1=insertNode(LinkedList1,node1);
     LinkedList1=insertNode(LinkedList1,node2);
     LinkedList1=insertNode(LinkedList1,node3);
 
+    printf("Number 1 (in reverse): ");
     displayList(LinkedList1);
 
     LinkedList2=insertNode(LinkedList2,node4);
     LinkedList2=insertNode(LinkedList2,node5);
-    // LinkedList2=insertNode(LinkedList2,node6);
+    LinkedList2=insertNode(LinkedList2,node6);
 
+    printf("Number 2 (in reverse): ");
     displayList(LinkedList2);
 
-    Node* result=NULL;
+    Node* result=createNode(0);
     result=ListAddition(LinkedList1,LinkedList2,result);
+    printf("Result (in reverse): ");
     displayList(result);
 
     return 0;
