@@ -51,7 +51,7 @@ Node* ListAddition(Node* head1,Node* head2,Node* result){
 void displayList(Node* head){
     Node* current=head;
     while (current != NULL){
-        current->next==NULL?printf("%d",current->data):printf("%d->",current->data);
+        printf("%d%s", current->data, current->next ? "->" : "");
         current=current->next;
     }
     printf("\n");
@@ -59,34 +59,17 @@ void displayList(Node* head){
 
 
 int main(){
-    Node* LinkedList1=NULL;
-    Node* LinkedList2=NULL;
+    Node *LinkedList1 = NULL, *LinkedList2 = NULL, *result;
 
-    Node* node1=createNode(3);
-    Node* node2=createNode(4);
-    Node* node3=createNode(2);
-    Node* node4=createNode(4);
-    Node* node5=createNode(6);
-    Node* node6=createNode(5);
+    LinkedList1 = insertNode(insertNode(insertNode(NULL, createNode(3)), createNode(4)), createNode(2));
+    printf("Number 1 (from LSB->...->MSB): "); displayList(LinkedList1);
 
-    LinkedList1=insertNode(LinkedList1,node1);
-    LinkedList1=insertNode(LinkedList1,node2);
-    LinkedList1=insertNode(LinkedList1,node3);
+    LinkedList2 = insertNode(insertNode(insertNode(NULL, createNode(4)), createNode(6)), createNode(5));
+    printf("Number 2 (from LSB->...->MSB): "); displayList(LinkedList2);
 
-    printf("Number 1 (in reverse): ");
-    displayList(LinkedList1);
-
-    LinkedList2=insertNode(LinkedList2,node4);
-    LinkedList2=insertNode(LinkedList2,node5);
-    LinkedList2=insertNode(LinkedList2,node6);
-
-    printf("Number 2 (in reverse): ");
-    displayList(LinkedList2);
-
-    Node* result=createNode(0);
-    result=ListAddition(LinkedList1,LinkedList2,result);
-    printf("Result (in reverse): ");
-    displayList(result);
+    result = createNode(0);
+    result = ListAddition(LinkedList1, LinkedList2, result);
+    printf("Result (from LSB->...->MSB): "); displayList(result);
 
     return 0;
 }
