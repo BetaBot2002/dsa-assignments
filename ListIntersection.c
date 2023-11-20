@@ -40,7 +40,7 @@ Node* checkIntersection(Node* head1,Node* head2){
 void displayList(Node* head){
     Node* current=head;
     while (current != NULL){
-        current->next==NULL?printf("%d",current->data):printf("%d->",current->data);
+        printf("%d%s", current->data, current->next ? "->" : "");
         current=current->next;
     }
     printf("\n");
@@ -59,21 +59,15 @@ int main(){
     LinkedList1=insertNode(LinkedList1,node1);
     LinkedList1=insertNode(LinkedList1,node2);
     LinkedList1=insertNode(LinkedList1,node3);
+    printf("List 1: "); displayList(LinkedList1);
 
-    displayList(LinkedList1);
-
-    LinkedList2=insertNode(LinkedList2,node3);
     LinkedList2=insertNode(LinkedList2,node4);
+    LinkedList2=insertNode(LinkedList2,node3);
+    printf("List 2: "); displayList(LinkedList2);
 
-    displayList(LinkedList2);
 
     Node* intersection=checkIntersection(LinkedList1,LinkedList2);
-    printf("%d\n",intersection->data);
-    // if(checkCycle(LinkedList)){
-    //     printf("There is a cycle.\n");
-    // }else{
-    //     printf("No Cycle.\n");
-    // }
+    printf("Intersection Node data: %d\n",intersection->data);
 
     return 0;
 }
