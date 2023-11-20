@@ -21,25 +21,20 @@ Node* insertNode(Node* head,int data){
     return newNode;
 }
 
-Node* MergeNodes(Node* head1,Node* head2){
-    Node* current1=head1;
-    Node* current2=head2;
+Node* MergeNodes(Node* head1, Node* head2){
+    if (head1 == NULL) return head2;
+    if (head2 == NULL) return head1;
 
-    if(current1 == NULL) return current2;
-    if(current2 == NULL) return current1;
+    Node* result = (head1->data >= head2->data) ? head1 : head2;
 
-    Node* result=NULL;
-
-    if(current1->data>=current2->data){
-        result=current1;
-        result->next=MergeNodes(current1->next,current2);
-    }else{
-        result=current2;
-        result->next=MergeNodes(current1,current2->next);
-    }
+    if (head1->data >= head2->data)
+        result->next = MergeNodes(head1->next, head2);
+    else
+        result->next = MergeNodes(head1, head2->next);
     
     return result;
 }
+
 
 void displayList(Node* head){
     Node* current=head;
@@ -52,15 +47,15 @@ void displayList(Node* head){
 
 
 int main(){
-    Node *LinkedList1 = NULL, *LinkedList2 = NULL, *result=NULL;
+    // Node *LinkedList1 = NULL, *LinkedList2 = NULL, *result=NULL;
 
-    LinkedList1 = insertNode(insertNode(insertNode(NULL, 1), 2), 3);
+    Node* LinkedList1 = insertNode(insertNode(insertNode(NULL, 1), 2), 34);
     printf("List 1 : "); displayList(LinkedList1);
 
-    LinkedList2 = insertNode(insertNode(NULL, 5), 9);
+    Node* LinkedList2 = insertNode(insertNode(NULL, 5), 9);
     printf("List 2 : "); displayList(LinkedList2);
 
-    result = MergeNodes(LinkedList1, LinkedList2);
+    Node* result = MergeNodes(LinkedList1, LinkedList2);
     printf("Result : "); displayList(result);
 
     return 0;
