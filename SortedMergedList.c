@@ -58,5 +58,5 @@ int main(){
     Node* result = MergeNodes(LinkedList1, LinkedList2);
     printf("Result : "); displayList(result);
 
-    return 0;
+    return 0; 
 }
