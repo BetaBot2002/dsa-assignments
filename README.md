@@ -29,7 +29,17 @@
 20. Implement the heapsort algorithm.
 21. Create a function to sort an array using bubble sort.
 22. Implement the radix sort algorithm for integers.
-<!--
+
 #### Assignment 5
+23. Implement a binary search tree and write functions for insertion and deletion.
+24. Write a program to find the height of a binary tree.
+25. Implement an algorithm to check if a binary tree is a binary search tree (BST).
+26. Create a function to find the lowest common ancestor (LCA) of two nodes in a binary tree.
+
 #### Assignment 6
-#### Assignment 7 -->
+27. Write an algorithm to perform an in-order traversal of a binary tree without recursion.
+28. Implement a function to find the kth smallest element in a BST
+29. Create a program to serialize and deserialize a binary tree.
+30. Implement an AVL tree and perform insertions and rotations.
+
+<!--#### Assignment 7 -->
