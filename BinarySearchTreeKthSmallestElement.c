@@ -31,23 +31,42 @@ int findHeight(TreeNode* root){
     return (leftHeight>rightHeight?leftHeight:rightHeight)+1;
 }
 
-TreeNode** inOrderListFromTree(TreeNode* root,TreeNode** stack,int *top){
-    if(root!=NULL){
-        stack=inOrderListFromTree(root->left,stack,top);
-        stack[++*top]=root;
-        stack=inOrderListFromTree(root->right,stack,top);
-    }
-    return stack;
+int countNodes(TreeNode* root){
+    if(root==NULL) return 0;
+    return 1+countNodes(root->left)+countNodes(root->right);
 }
+
 TreeNode* findKthSmallest(TreeNode* root,int index){
-    if(root==NULL) return NULL;
-    int maxNumberOfNodes=pow(2,findHeight(root)+1)-1;
-    TreeNode** stack=(TreeNode**)malloc(maxNumberOfNodes*sizeof(TreeNode));
-    int top=-1;
-    stack=inOrderListFromTree(root,stack,&top);
-    int pos=index==0?0:index-1>top?top:index-1;
-    return stack[pos];
+    int leftCount=countNodes(root->left);
+
+    if(index<=leftCount) return findKthSmallest(root->left,index);
+    else if(index>leftCount+1) return findKthSmallest(root->right,index-1-leftCount);
+
+    //leftCount+1 th element is the root
+
+    return root;
 }
+
+/*Alternative Approach: Not Efficient*/
+
+// TreeNode** inOrderListFromTree(TreeNode* root,TreeNode** stack,int *top){
+//     if(root!=NULL){
+//         stack=inOrderListFromTree(root->left,stack,top);
+//         stack[++*top]=root;
+//         stack=inOrderListFromTree(root->right,stack,top);
+//     }
+//     return stack;
+// }
+// TreeNode* findKthSmallest(TreeNode* root,int index){
+//     if(root==NULL) return NULL;
+//     int maxNumberOfNodes=pow(2,findHeight(root)+1)-1;
+//     TreeNode** stack=(TreeNode**)malloc(maxNumberOfNodes*sizeof(TreeNode));
+//     int top=-1;
+//     stack=inOrderListFromTree(root,stack,&top);
+//     int pos=index==0?0:index-1>top?top:index-1;
+//     return stack[pos];
+// }
+
 
 void inorderTraversal(TreeNode* root){
     if(root!=NULL){
