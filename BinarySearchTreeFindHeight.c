@@ -53,6 +53,5 @@ int main(){
     inorderTraversal(root);
 
     printf("The Height of the tree is: %d\n",findHeight(root));
-
     return 0;
 }
