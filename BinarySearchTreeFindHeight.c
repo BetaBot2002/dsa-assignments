@@ -23,30 +23,11 @@ TreeNode* insertNode(TreeNode* root,int data){
     return root;
 }
 
-TreeNode* findMinimumNode(TreeNode* root){
-    while (root->left!=NULL) root=root->left;
-    return root;
-}
-
-TreeNode* deleteNode(TreeNode* root,int data){
-    if(root==NULL) return root;
-    else if(data<root->data) root->left=deleteNode(root->left,data);
-    else if(data>root->data) root->right=deleteNode(root->right,data);
-    else{
-        if(root->left ==NULL){
-            TreeNode* temp=root->right;
-            free(root);
-            return temp;
-        }else if(root->right == NULL){
-            TreeNode* temp=root->left;
-            free(root);
-            return temp;
-        }
-        TreeNode* temp=findMinimumNode(root->right);
-        root->data=temp->data;
-        root->right=deleteNode(root->right,temp->data);
-    }
-    return root;
+int findHeight(TreeNode* root){
+    if(root==NULL) return -1;
+    int leftHeight=findHeight(root->left);
+    int rightHeight=findHeight(root->right);
+    return (leftHeight>rightHeight?leftHeight:rightHeight)+1;
 }
 
 void inorderTraversal(TreeNode* root){
@@ -65,16 +46,13 @@ int main(){
     root=insertNode(root,4);
     root=insertNode(root,33);
     root=insertNode(root,88);
-    root=insertNode(root,2);
+    root=insertNode(root,31);
+    root=insertNode(root,32);
 
     printf("The In Order Traversal of the Tree is:\n");
     inorderTraversal(root);
 
-    root=deleteNode(root,81);
-    root=deleteNode(root,4);
-    root=deleteNode(root,2);
+    printf("The Height of the tree is: %d\n",findHeight(root));
 
-    printf("The In Order Traversal of the Tree after Deletion is:\n");
-    inorderTraversal(root);
     return 0;
 }
