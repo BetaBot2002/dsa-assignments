@@ -38,7 +38,7 @@
 
 #### Assignment 6
 27. Write an algorithm to perform an in-order traversal of a binary tree without recursion.
-28. Implement a function to find the kth smallest element in a BST
+28. Implement a function to find the kth smallest element in a BST.
 29. Create a program to serialize and deserialize a binary tree.
 30. Implement an AVL tree and perform insertions and rotations.
 
