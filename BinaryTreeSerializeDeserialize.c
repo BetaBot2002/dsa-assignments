@@ -1,6 +1,9 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<math.h>
+#include<string.h>
+
+#define NULL_VALUE -9999
 
 typedef struct TreeNode{
     int data;
@@ -41,13 +44,16 @@ int* serializeBinaryTree(TreeNode* root,int numberOfNodes){
     stack[++top]=current;
 
     int* serialized=(int*)malloc(numberOfNodes*sizeof(int));
+    for(int i=0;i<numberOfNodes;i++){
+        serialized[i]=NULL_VALUE;
+    }
     serialized[0]=current->data;
     
     int i=0;
     while(i<numberOfNodes){
         // printf("%d\n",i);
-        serialized[2*i+1]=current->left==NULL?NULL:current->left->data;
-        serialized[2*i+2]=current->right==NULL?NULL:current->right->data;
+        serialized[2*i+1]=current->left==NULL?NULL_VALUE:current->left->data;
+        serialized[2*i+2]=current->right==NULL?NULL_VALUE:current->right->data;
 
         if(current->left!=NULL){
             stack[++top]=current;
@@ -65,6 +71,85 @@ int* serializeBinaryTree(TreeNode* root,int numberOfNodes){
     }
     return serialized;
 }
+
+TreeNode* deserializeBinaryTree(int* serialized,int numberOfNodes){
+    TreeNode* result=NULL;
+    result=insertNode(result,serialized[0]);
+
+    TreeNode* current=result;
+
+    TreeNode* stack[100];
+    int top=-1;
+
+    // printf("%d\n",numberOfNodes);
+    stack[++top]=current;
+    
+    int i=0;
+    while(i<numberOfNodes){
+        printf("%d\n",current->data);
+        // serialized[2*i+1]=current->left==NULL?NULL_VALUE:current->left->data;
+        // serialized[2*i+2]=current->right==NULL?NULL_VALUE:current->right->data;
+        current->left=(2 * i + 1)>=numberOfNodes?NULL:serialized[2*i+1]!=NULL_VALUE?insertNode(current->left,serialized[2*i+1]):NULL;
+        current->right=(2 * i + 2)>=numberOfNodes?NULL:serialized[2*i+2]!=NULL_VALUE?insertNode(current->right,serialized[2*i+2]):NULL;
+        // printf("%d\n",i);
+
+        if(current->left!=NULL){
+            stack[++top]=current;
+            i=2*i+1;
+            current=current->left;
+        }else if(current->right!=NULL){
+            stack[++top]=current;
+            i=2*i+2;
+            current=current->right;
+        }else{
+            i++;
+            current=stack[top--]->right;
+        }
+
+    }
+    return result;
+}
+
+// TreeNode* deserializeBinaryTree(int* serialized, int numberOfNodes) {
+//     TreeNode* result = NULL;
+//     result = insertNode(result, serialized[0]);
+
+//     TreeNode* current = result;
+
+//     TreeNode* stack[100];
+//     int top = -1;
+
+//     stack[++top] = current;
+
+//     int i = 0;
+//     while (i < numberOfNodes) {
+//         printf("Current data: %d\n", current->data);
+
+//         current->left = (2 * i + 1)>=numberOfNodes?NULL:serialized[2 * i + 1] != NULL_VALUE ? insertNode(current->left, serialized[2 * i + 1]) : NULL;
+//         current->right =(2 * i + 2)>=numberOfNodes?NULL: serialized[2 * i + 2] != NULL_VALUE ? insertNode(current->right, serialized[2 * i + 2]) : NULL;
+
+//         printf("Left data: %d, Right data: %d\n", current->left ? current->left->data : -1, current->right ? current->right->data : -1);
+
+//         if (current->left != NULL) {
+//             stack[++top] = current;
+//             i = 2 * i + 1;
+//             current = current->left;
+//         } else if (current->right != NULL) {
+//             stack[++top] = current;
+//             i = 2 * i + 2;
+//             current = current->right;
+//         } else {
+//             i++;
+//             if (top >= 0) {
+//                 current = stack[top--]->right;
+//             } else {
+//                 break;
+//             }
+//         }
+//     }
+//     return result;
+// }
+
 
 void inorderTraversal(TreeNode* root){
     if(root!=NULL){
@@ -98,5 +183,7 @@ int main(){
 
     int* serialized=serializeBinaryTree(root,numberOfNodes);
     printArray(serialized,numberOfNodes);
+
+    inorderTraversal(deserializeBinaryTree(serialized,numberOfNodes));
 
 }
