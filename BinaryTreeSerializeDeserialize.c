@@ -86,27 +86,83 @@ TreeNode* deserializeBinaryTree(int* serialized,int numberOfNodes){
     
     int i=0;
     while(i<numberOfNodes){
-        // printf("%d\n",current->data);
+        printf("%d\n",current->data);
         current->left=(2 * i + 1)>=numberOfNodes?NULL:serialized[2*i+1]!=NULL_VALUE?insertNode(current->left,serialized[2*i+1]):NULL;
+        printf("Debug1\n");
         current->right=(2 * i + 2)>=numberOfNodes?NULL:serialized[2*i+2]!=NULL_VALUE?insertNode(current->right,serialized[2*i+2]):NULL;
+        printf("Debug2\n");
         // printf("%d\n",i);
 
         if(current->left!=NULL){
             stack[++top]=current;
             i=2*i+1;
             current=current->left;
+            printf("Debug3\n");
         }else if(current->right!=NULL){
             stack[++top]=current;
             i=2*i+2;
             current=current->right;
+            printf("Debug4\n");
         }else{
             i++;
             current=stack[top--]->right;
+            printf("Debug5\n");
         }
 
     }
     return result;
 }
+
+// TreeNode* deserializeBinaryTree(int* serialized, int numberOfNodes) {
+//     TreeNode* result = NULL;
+//     result = insertNode(result, serialized[0]);
+
+//     TreeNode* current = result;
+
+//     TreeNode* stack[100];
+//     int top = -1;
+
+//     stack[++top] = current;
+
+//     int i = 0;
+//     while (i < numberOfNodes) {
+//         // Print stack data
+//         printf("Stack data:");
+//         for (int j = 0; j <= top; ++j) {
+//             printf(" %d", stack[j]->data);
+//         }
+//         printf("\n");
+
+//         printf("Current data: %d\n", current->data);
+
+//         current->left = serialized[2 * i + 1] != NULL_VALUE ? insertNode(current->left, serialized[2 * i + 1]) : NULL;
+//         current->right = serialized[2 * i + 2] != NULL_VALUE ? insertNode(current->right, serialized[2 * i + 2]) : NULL;
+
+//         printf("Left data: %d, Right data: %d\n", current->left ? current->left->data : -1, current->right ? current->right->data : -1);
+
+
+        
+//         if (current->left != NULL) {
+//             stack[++top] = current;
+//             i = 2 * i + 1;
+//             current = current->left;
+//         } else if (current->right != NULL) {
+//             stack[++top] = current;
+//             i = 2 * i + 2;
+//             current = current->right;
+//         } else {
+//             i++;
+//             if (top >= 0) {
+//                 current = stack[--top]->right;
+//             } else {
+//                 break;
+//             }
+//         }
+//     }
+//     return result;
+// }
+
+
 
 void inorderTraversal(TreeNode* root){
     if(root!=NULL){
@@ -132,6 +188,7 @@ int main(){
 
     root=insertNode(root,2);
     root=insertNode(root,1);
+    root=insertNode(root,-1);
     root=insertNode(root,4);
     root=insertNode(root,33);
     root=insertNode(root,88);
