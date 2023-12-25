@@ -56,6 +56,19 @@ int* serializeBinaryTree(TreeNode* root,int numberOfNodes){
 }
 
 
+TreeNode* deserializeBinaryTree(int* serialized,int* index){
+    if(serialized[*index]==NULL_VALUE){
+        (*index)++;
+        return NULL;
+    }
+    
+    TreeNode* deserialized=(TreeNode*)malloc(sizeof(TreeNode));
+    deserialized->data=serialized[(*index)++];
+    deserialized->left=deserializeBinaryTree(serialized,index);
+    deserialized->right=deserializeBinaryTree(serialized,index);
+
+    return deserialized;
+}
 
 
 void inorderTraversal(TreeNode* root){
@@ -97,9 +110,12 @@ int main(){
     inorderTraversal(root);
 
     int* serialized=serializeBinaryTree(root,numberOfNodes);
+    printf("Serialized version of the Binary Tree: (Excluding Null Nodes)\n");
     printArray(serialized,numberOfNodes);
-
-    // inorderTraversal(deserializeBinaryTree(serialized,numberOfNodes));
+    
+    int index=0;
+    printf("In-Order Traversal of the Deserialized Binary Tree:\n");
+    inorderTraversal(deserializeBinaryTree(serialized,&index));
 
 }
 
