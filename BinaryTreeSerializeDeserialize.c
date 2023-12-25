@@ -34,6 +34,26 @@ int findHeight(TreeNode* root){
     return (leftHeight>rightHeight?leftHeight:rightHeight)+1;
 }
 
+void performSerialization(TreeNode* root,int* arr,int* index){
+    if(root==NULL){
+        arr[(*index)++]=NULL_VALUE;
+        return;
+    }
+
+    arr[(*index)++]=root->data;
+    performSerialization(root->left,arr,index);
+    performSerialization(root->right,arr,index);
+}
+
+int* serializeBinaryTree(TreeNode* root,int numberOfNodes){
+    int* serialized=(int*)malloc(numberOfNodes*sizeof(int));
+    int index=0;
+    performSerialization(root,serialized,&index);
+    for(int i=index;i<numberOfNodes;i++){
+        serialized[i]=NULL_VALUE;
+    }
+    return serialized;
+}
 
 
 
@@ -51,7 +71,8 @@ void printArray(int arr[], int size) {
     if(arr[i]!=NULL_VALUE){
         printf("%d ",arr[i]);
     }else{
-        printf("NULL ");
+        // printf("NULL ");
+        continue;
     }
   }
   printf("\n");
@@ -78,7 +99,7 @@ int main(){
     int* serialized=serializeBinaryTree(root,numberOfNodes);
     printArray(serialized,numberOfNodes);
 
-    inorderTraversal(deserializeBinaryTree(serialized,numberOfNodes));
+    // inorderTraversal(deserializeBinaryTree(serialized,numberOfNodes));
 
 }
 
