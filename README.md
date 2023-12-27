@@ -1,7 +1,7 @@
 ## Questions
 
 #### Assignment 1
-1. Find the Maximum Element in an Array.
+1. Find the Maximum Element in an Array. [View Answer](./FindMaxFromArray.c)
 2. Reverse an Array In-Place.
 3. Find the Intersection of Two Arrays.
 4. Rotate an Array by a Given Number of Positions.
