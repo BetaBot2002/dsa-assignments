@@ -24,11 +24,11 @@
 17. Implement a function to add two numbers represented by linked lists (e.g., 342 + 465 = 807). [View Answer](./AdditionUsingList.c)
 
 #### Assignment 4
-18. Implement the merge sort algorithm.
-19. Write a program to perform the quicksort algorithm.
-20. Implement the heapsort algorithm.
-21. Create a function to sort an array using bubble sort.
-22. Implement the radix sort algorithm for integers.
+18. Implement the merge sort algorithm. [View Answer](./MergeSort.c)
+19. Write a program to perform the quicksort algorithm. [View Answer](./QuickSort.c)
+20. Implement the heapsort algorithm. [View Answer](./HeapSort.c)
+21. Create a function to sort an array using bubble sort. [View Answer](./BubbleSort.c)
+22. Implement the radix sort algorithm for integers. [View Answer](./RadixSort.c)
 
 #### Assignment 5
 23. Implement a binary search tree and write functions for insertion and deletion.
