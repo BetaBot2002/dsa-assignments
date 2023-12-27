@@ -2,10 +2,10 @@
 
 #### Assignment 1
 1. Find the Maximum Element in an Array. [View Answer](./FindMaxFromArray.c)
-2. Reverse an Array In-Place.
-3. Find the Intersection of Two Arrays.
-4. Rotate an Array by a Given Number of Positions.
-5. Find the Missing Number in an Array.
+2. Reverse an Array In-Place. [View Answer](./ReverseArray.c)
+3. Find the Intersection of Two Arrays. [View Answer](./IntersectionOfTwoArray.c)
+4. Rotate an Array by a Given Number of Positions. [View Answer](./RotateArray.c)
+5. Find the Missing Number in an Array. [View Answer](./FindMissingNumber.c)
 
 #### Assignment 2
 6. Write a function to remove duplicates from a sorted array.
