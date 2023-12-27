@@ -42,4 +42,6 @@
 29. Create a program to serialize and deserialize a binary tree.
 30. Implement an AVL tree and perform insertions and rotations.
 
-<!--#### Assignment 7 -->
+#### Assignment 7
+31. Create a simple hash table with basic operations (insert, delete, search).
+32. Implement a hash map with collision resolution (e.g.,chaining or open addressing).
