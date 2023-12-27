@@ -15,13 +15,13 @@
 10. Implement an algorithm to search for an element in a sorted and rotated array (rotated binary search). [View Answer](./RotatedBinarySearch.c)
 
 #### Assignment 3
-11. Create a singly linked list and write a function to reverse it.
-12. Implement a program to detect if a linked list has a cycle.
-13. Write a function to merge two sorted linked lists into a single sorted list.
-14. Implement an algorithm to find the nth node from the end of a linked list.
-15. Create a program to delete a node with a given value from a linked list.
-16. Write a function to check if two linked lists intersect, and if they do, find the intersection node.
-17. Implement a function to add two numbers represented by linked lists (e.g., 342 + 465 = 807).
+11. Create a singly linked list and write a function to reverse it. [View Answer](./SinglyLinkedListReversed.c)
+12. Implement a program to detect if a linked list has a cycle. [View Answer](./CheckCycleInLinkedList.c)
+13. Write a function to merge two sorted linked lists into a single sorted list. [View Answer](./SortedMergedList.c)
+14. Implement an algorithm to find the nth node from the end of a linked list. [View Answer](./FindNthNodeLinkedList.c)
+15. Create a program to delete a node with a given value from a linked list. [View Answer](./DeleteNodeLinkedList.c)
+16. Write a function to check if two linked lists intersect, and if they do, find the intersection node. [View Answer](./ListIntersection.c)
+17. Implement a function to add two numbers represented by linked lists (e.g., 342 + 465 = 807). [View Answer](./AdditionUsingList.c)
 
 #### Assignment 4
 18. Implement the merge sort algorithm.
