@@ -37,10 +37,10 @@
 26. Create a function to find the lowest common ancestor (LCA) of two nodes in a binary tree. [View Answer](./BinarySearchTreeLowestCommonAncestor.c)
 
 #### Assignment 6
-27. Write an algorithm to perform an in-order traversal of a binary tree without recursion.
-28. Implement a function to find the kth smallest element in a BST.
-29. Create a program to serialize and deserialize a binary tree.
-30. Implement an AVL tree and perform insertions and rotations.
+27. Write an algorithm to perform an in-order traversal of a binary tree without recursion. [View Answer](./BinarySearchTreeInorderWithoutRecursion.c)
+28. Implement a function to find the kth smallest element in a BST. [View Answer](./BinarySearchTreeKthSmallestElement.c)
+29. Create a program to serialize and deserialize a binary tree. [View Answer](./BinaryTreeSerializeDeserialize.c)
+30. Implement an AVL tree and perform insertions and rotations. [View Answer](./AVLTree.c)
 
 #### Assignment 7
 31. Create a simple hash table with basic operations (insert, delete, search).
