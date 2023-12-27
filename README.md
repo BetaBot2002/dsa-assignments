@@ -31,10 +31,10 @@
 22. Implement the radix sort algorithm for integers. [View Answer](./RadixSort.c)
 
 #### Assignment 5
-23. Implement a binary search tree and write functions for insertion and deletion.
-24. Write a program to find the height of a binary tree.
-25. Implement an algorithm to check if a binary tree is a binary search tree (BST).
-26. Create a function to find the lowest common ancestor (LCA) of two nodes in a binary tree.
+23. Implement a binary search tree and write functions for insertion and deletion. [View Answer](./BinarySearchTreeInsertionDeletion.c)
+24. Write a program to find the height of a binary tree. [View Answer](./BinarySearchTreeFindHeight.c)
+25. Implement an algorithm to check if a binary tree is a binary search tree (BST). [View Answer](./CheckBinarySearchTree.c)
+26. Create a function to find the lowest common ancestor (LCA) of two nodes in a binary tree. [View Answer](./BinarySearchTreeLowestCommonAncestor.c)
 
 #### Assignment 6
 27. Write an algorithm to perform an in-order traversal of a binary tree without recursion.
