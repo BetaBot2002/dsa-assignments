@@ -44,4 +44,4 @@
 
 #### Assignment 7
 31. Create a simple hash table with basic operations (insert, delete, search). [View Answer](./HashTableSimple.c)
-32. Implement a hash map with collision resolution (e.g.,chaining or open addressing).
+32. Implement a hash map with collision resolution (e.g.,chaining or open addressing). [View Answer](./HashTableCollisionResolution.c)
