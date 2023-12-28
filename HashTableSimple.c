@@ -48,6 +48,15 @@ HashNode* search(char* key){
     return found;
 }
 
+bool delete(char* key){
+    int index=hash(key);
+    HashNode* found=HashTable[index];
+    if(found==NULL || strcmp(found->key,key)!=0) return false;
+    free(HashTable[index]->key);
+    HashTable[index]=NULL;
+    return true;
+}
+
 void initHashTable(){
     for(int i=0;i<TABLE_SIZE;i++){
         HashTable[i]=NULL;
@@ -88,5 +97,10 @@ int main(){
     HashNode* found=search("3");
     if(found==NULL) printf("Not Found\n");
     else printf("Found: %s\t%d\n",found->key,found->value);
+
+    bool deleted=delete("4");
+    if(!deleted) printf("Not Found\n");
+    else printf("Data Deleted\n");
+    printTable();
     return 0;
 }
