@@ -92,15 +92,17 @@ int main(){
         else printf("Data Inserted\n");
     }
 
+    printf("Table:\n");
     printTable();
     
-    HashNode* found=search("3");
+    HashNode* found=search("Sinchan");
     if(found==NULL) printf("Not Found\n");
     else printf("Found: %s\t%d\n",found->key,found->value);
 
-    bool deleted=delete("4");
+    bool deleted=delete("Ayush");
     if(!deleted) printf("Not Found\n");
     else printf("Data Deleted\n");
+    printf("Table After Deletion:\n");
     printTable();
     return 0;
 }
