@@ -89,7 +89,7 @@ int main(){
 
     printf("The In Order Traversal of the Tree is:\n");
     inorderTraversal(root);
-
-    printf("The Kth smallest element: %d\n",findKthSmallest(root,3)->data);
+    int pos=3;
+    printf("The %d no. smallest element: %d\n",pos,findKthSmallest(root,pos)->data);
     return 0;
 }
