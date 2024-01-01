@@ -49,10 +49,10 @@ int main(){
     root=insertNode(root,31);
     root=insertNode(root,32);
 
-    printf("The In Order Traversal of the Tree is:\n");
-    inorderTraversal(root);
-
-    TreeNode* LCA=findLowestCommonAncestor(root,1,4);
-    printf("The LCA of the Binary Search Tree is: %d\n",LCA->data);
+    // printf("The In Order Traversal of the Tree is:\n");
+    // inorderTraversal(root);
+    int data1=1;int data2=4;
+    TreeNode* LCA=findLowestCommonAncestor(root,data1,data2);
+    printf("The LCA of %d and %d is: %d\n",data1,data2,LCA->data);
     return 0;
 }
