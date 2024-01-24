@@ -45,3 +45,8 @@
 #### Assignment 7
 31. Create a simple hash table with basic operations (insert, delete, search). [View Answer](./HashTableSimple.c)
 32. Implement a hash map with collision resolution (e.g.,chaining or open addressing). [View Answer](./HashTableCollisionResolution.c)
+
+#### Assignment 8
+33. Implement an adjacency matrix representation of a graph and perform basic graph operations (add edge, remove edge, check for connectivity).
+34. Write a program to perform depth-first search (DFS) on a graph.
+35. Implement a breadth-first search (BFS) algorithm for a graph.
