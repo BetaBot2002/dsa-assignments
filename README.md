@@ -47,6 +47,6 @@
 32. Implement a hash map with collision resolution (e.g.,chaining or open addressing). [View Answer](./HashTableCollisionResolution.c)
 
 #### Assignment 8
-1.  Implement an adjacency matrix representation of a graph and perform basic graph operations (add edge, remove edge, check for connectivity). [View Answer](./GraphAdjacencyMatrix.c)
-2.  Write a program to perform depth-first search (DFS) on a graph. [View Answer](./GraphDFS.c)
-3.  Implement a breadth-first search (BFS) algorithm for a graph. [View Answer](./GraphBFS.c)
+33.  Implement an adjacency matrix representation of a graph and perform basic graph operations (add edge, remove edge, check for connectivity). [View Answer](./GraphAdjacencyMatrix.c)
+34.  Write a program to perform depth-first search (DFS) on a graph. [View Answer](./GraphDFS.c)
+35.  Implement a breadth-first search (BFS) algorithm for a graph. [View Answer](./GraphBFS.c)
