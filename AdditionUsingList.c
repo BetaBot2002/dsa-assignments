@@ -45,6 +45,11 @@ Node* ListAddition(Node* head1,Node* head2,Node* result){
         resultPtr=resultPtr->next;
     }
 
+    if(carry>0){
+		resultPtr->next=createNode(carry);
+		resultPtr=resultPtr->next;
+	}
+
     return result->next;
 }
 
