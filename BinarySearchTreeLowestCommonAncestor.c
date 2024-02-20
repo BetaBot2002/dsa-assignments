@@ -25,8 +25,8 @@ TreeNode* insertNode(TreeNode* root,int data){
 
 TreeNode* findLowestCommonAncestor(TreeNode* root,int data1,int data2){
     if(root==NULL) return NULL;
-    if(root->data>data1 && root->data>data2) findLowestCommonAncestor(root->left,data1,data2);
-    else if(root->data<data1 && root->data<data2) findLowestCommonAncestor(root->right,data1,data2);
+    if(root->data>data1 && root->data>data2) return findLowestCommonAncestor(root->left,data1,data2);
+    else if(root->data<data1 && root->data<data2) return findLowestCommonAncestor(root->right,data1,data2);
     else return root;
 }
 
