@@ -16,8 +16,10 @@ TreeNode* createNode(int data){
 }
 
 TreeNode* insertNode(TreeNode* root,int data){
-    TreeNode* newNode=createNode(data);
-    if(root==NULL) return newNode;
+    if(root==NULL) {
+        TreeNode* newNode=createNode(data);
+        return newNode;
+    }
     if(data<root->data) root->left=insertNode(root->left,data);
     else if(data>root->data) root->right=insertNode(root->right,data);
     return root;
